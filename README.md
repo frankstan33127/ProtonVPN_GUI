@@ -28,6 +28,8 @@ And you can place the .desktop file anywhere you wish.
  the error `_tkinter.TclError: unknown color name "BACKGROUND"` then try typing `xrdb -load /dev/null` and run it again. If it works now, then 
  you will have to add this line `subprocess.call('xrdb -load /dev/null',shell=True)` to run.py and see if you can run it without the terminal now.
  
+ **DISCLAIMER :** Note that the method used to gain root privileges (because you need to run ProtonVPN commands as root for them to work), aren't the most secure ones. This was only a fun little project that I have made and is not the official ProtonVPN GUI. There could be some major security flaws and therefore, try this at your own risk. I am not to be held responsible for anything.
+ 
  **NOTE :** For now it connects to the fastest server by default. I will be adding more connection features in the future and more options will be soon
  available as well. You are most welcome to add more features to this yourself and modify, recreate and/or reproduce this if you wish. 
  The icon was created by myself.
