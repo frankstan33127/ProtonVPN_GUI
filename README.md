@@ -1,7 +1,7 @@
 # PROTONVPN_GUI
 A simple and basic ProtonVPN GUI for linux. Made using python.
 
-##Instructions 
+## Instructions 
 
 1. git clone to your **home/user** directory. Or any directory you wish but you will then have to change the paths in the **.desktop** and python files.
 
