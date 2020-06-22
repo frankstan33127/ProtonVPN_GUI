@@ -1,0 +1,10 @@
+[Desktop Entry]
+#The desktop entry can be moved to desktop or any other location without any issues.
+#Note, make the .desktop file and the .py files executable by right-clicking and going into their properties.
+Name=ProtonVPN
+Exec=/home/$USER/ProtonVPN_GUI/run.py
+#Change the '$USER' to the name of your user to make the icon work.
+Icon=/home/$USER/ProtonVPN_GUI/ProtonVPN.png
+Type=Application
+Version=1.0
+Terminal=false
