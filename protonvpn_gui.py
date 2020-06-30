@@ -55,6 +55,20 @@ def status():
     else:
         label1.config(text=stat.stdout, font=fontstyle, fg="cyan")
         label1.grid(row=1, column=1)
+  
+def reconnect():
+    reconn = subprocess.run('protonvpn reconnect', shell=True, capture_output=True, text=True)
+    global label1
+    #print(stat.stdout)
+    if reconn.stdout=="":
+        label1.config(text="protonvpn has not been installed", fg="red", font=fontstyle)
+        label1.grid(row=1, column=1)
+    elif reconn.stdout == "[!] There has been no profile initialized yet. Please run 'protonvpn init'.\n":
+        label1.config(text="There has been no profile initialized yet. Please run protonvpn init", fg="red", font=fontstyle)
+        label1.grid(row=1, column=1)
+    else:
+        label1.config(text=reconn.stdout, font=fontstyle, fg="cyan")
+        label1.grid(row=1, column=1)
 
 #Connect to fastest server button
 button1 = Button(text="Connect - fastest server", command=connection, fg="black", bg="grey", font=fontstyle)
@@ -65,9 +79,13 @@ button2 = Button(text="Disconnect", command=disconnection, fg="black", bg="grey"
 #Status button
 button3 = Button(text="Status", command=status, fg="black", bg="grey", font=fontstyle)
 
+button4 = Button(text="Reconnect", command=reconnect, fg="black", bg="grey", font=fontstyle)
+
 button1.grid(row=0, column=1)
 button2.grid(row=0, column=2)
 button3.grid(row=0, column=3)
+button4.grid(row=0, column=4)
+
 
 #Title of window
 root.title("ProtonVPN")
